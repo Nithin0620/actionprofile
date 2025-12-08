@@ -1,12 +1,16 @@
 name: Build WF
 on:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   
   pull_request:
     brances: ["main"]
 
+  workflow_dispatch:
+  
+  schedule:
+    - cron: "0 20 * * 1-5" # monday to friday every night 8pm this will trigger mm HH DD MM DOW
 
 jobs:
   Build:
