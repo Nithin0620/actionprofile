@@ -2,16 +2,16 @@ name: Vprofile CICD Workflow
 
 on:
   push:
-    branches:
-      - main
-  
+    branches: [ "main", "develop" ]
+
   pull_request:
-    brances: ["main"]
+    branches: [ "main", "develop" ]
 
   workflow_dispatch:
-  
+
   schedule:
-    - cron: "00 21 * * 1-5" # monday to friday every night 9pm this will trigger mm HH DD MM DOW
+    - cron: "10 14 * * 1-5"   # After noon 2:10 pm, Mondat to Friday
+
 
 permissions:
   contents: read
